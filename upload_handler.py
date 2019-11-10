@@ -1,7 +1,6 @@
-
 import os
 from pydrive.drive import GoogleDrive 
-from file_content import file_content
+#from file_content import file_content
 
 def upload_handler(gauth, os_root_path, gdrive_root_folder_id):
 	# Google authentication 

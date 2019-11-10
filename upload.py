@@ -4,21 +4,22 @@ from upload_handler import upload_handler
 from pydrive.auth import GoogleAuth
 from datetime import datetime
 
-def upload():
+def upload(path, folder_id):
 
 	""" Initial Authentication, local """
 	gauth = GoogleAuth()
 	gauth.LocalWebserverAuth()
 
-	# Gdrive folder id, hard coded
-	folder_id = '15vYFyHRd83FZgyfjAJ0XQtl8gm7-3WFy'
+	# Gdrive folder id, if you want hard code it
+	#folder_id = ''
+	
 	#print(drive, vars(gauth))
 
 	# Empty Gdrive folder
 	delete_items_in_gdrive_folder(gauth, folder_id)
 
-	#Path to folder for sync
-	path = '/Users/samir/Documents/Project Kodak.nosync/sync notes/' # move to top run file
+	#Path to folder for sync if you want to hard code it
+	#path = '' 
 
 	#Upload handler for folder path and Grdrive folder
 	upload_handler(gauth, path, folder_id)
@@ -26,7 +27,22 @@ def upload():
 	with open('./update_log.txt', 'a') as update_log:
 		update_log.write('Synced with GDrive on ' + str(datetime.now()))
 
-upload()	
+
+
+""" If you decide to hard code the Google Drive folder ID and Directory Path  
+	you dont have to read the folder_sync_registrer below. You can just remove the code and uncomment
+	the upload call below this section
+"""
+
+import csv
+with open('folder_sync_registrer.txt', 'r') as f:
+    reader = csv.reader(f, delimiter=',')
+    for row in reader:
+    	upload(row[0], row[1])
+    	
+
+
+#upload()	
 
 
 
