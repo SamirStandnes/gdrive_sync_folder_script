@@ -25,11 +25,10 @@ def upload(path, folder_id):
 	upload_handler(gauth, path, folder_id)
 
 	with open('./update_log.txt', 'a') as update_log:
-		update_log.write('Synced with GDrive on ' + str(datetime.now()))
+		update_log.write( '\n' + 'Synced with GDrive on ' + str(datetime.now()))
 
 
-
-""" If you decide to hard code the Google Drive folder ID and Directory Path  
+""" If you decide to hard code the Google Drive folder ID and Directory Path into the upload function 
 	you dont have to read the folder_sync_registrer below. You can just remove the code and uncomment
 	the upload call below this section
 """
