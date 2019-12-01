@@ -4,11 +4,11 @@ This program syncs all local folder (pathnames) in `folder_sync_registrer.txt` t
 
 
 ### Run the program
-Run `Upload.py`
+Run `upload.py`
 
 
 
-This [Medium](https://medium.com/swlh/sync-a-folder-on-your-computer-to-google-drive-with-python-5155e73e18ca)post explains how to implement this code youself.
+This [Medium](https://medium.com/swlh/sync-a-folder-on-your-computer-to-google-drive-with-python-5155e73e18ca) post explains how to implement this code youself.
 
 
 
